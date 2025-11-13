@@ -1,0 +1,187 @@
+/* :root 변수는 Home.css의 것을 공유한다고 가정합니다. */
+/* 만약 공유되지 않는다면 Home.css의 :root {} 블록을 여기에 복사해오세요. */
+
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 상단 정렬 */
+  padding: 0rem 1rem;
+  
+  min-height: 102vh;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--bg-light);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.form-wrapper p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-sizing: border-box; /* 패딩이 너비를 밀어내지 않도록 설정 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.form-group input[disabled] {
+  background-color: #f4f4f4;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.form-group textarea {
+  resize: vertical; /* 세로로만 크기 조절 가능 */
+  min-height: 120px;
+}
+
+/* 날짜 필드를 가로로 정렬 */
+.date-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.date-input {
+  flex: 1; /* 두 필드가 공간을 균등하게 나눠 가짐 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 제출 버튼 */
+.submit-button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+/* CreatePost.css에 추가 */
+.post-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: white;
+  appearance: none; /* 브라우저 기본 화살표 제거 (선택) */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20128c3.6%203.6%207.8%205.4%2013%205.4s9.4-1.8%2013-5.4l128-128c3.6-3.6%205.4-7.8%205.4-13%200-4.8-1.8-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  cursor: pointer;
+}
+
+.post-form input[type="text"],
+.post-form input[type="number"],
+.post-form input[type="date"],
+.post-form select,
+.post-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: white;
+  box-sizing: border-box; /* ⭐️ 중요: 패딩을 포함하여 너비 100% */
+}
+
+/* (선택 사항)
+  일부 브라우저에서 type=number 입력창의
+  오른쪽에 나타나는 스피너(증감 화살표)를 제거합니다.
+*/
+.post-form input[type="number"]::-webkit-inner-spin-button,
+.post-form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.post-form input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+
+/* <select> 태그에만 적용되는 커스텀 화살표
+  (이전에 추가한 스타일과 동일합니다)
+*/
+.post-form select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20128c3.6%203.6%207.8%205.4%2013%205.4s9.4-1.8%2013-5.4l128-128c3.6-3.6%205.4-7.8%205.4-13%200-4.8-1.8-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  cursor: pointer;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* .form-group-row 안의 .form-group이 flex 1을 갖도록 함 */
+.form-group-row > .form-group {
+  flex: 1; /* 1:1 비율로 공간 차지 */
+  margin-bottom: 0; 
+}

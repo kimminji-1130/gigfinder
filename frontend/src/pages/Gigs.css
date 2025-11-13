@@ -1,0 +1,165 @@
+.gigs-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* 1. 사이드바 (필터) */
+.gigs-sidebar {
+  flex: 0 0 250px; /* 250px 고정 너비 */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+  border: 1px solid #eee;
+}
+
+.gigs-sidebar h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.filter-group select,
+.filter-group input[type='text'] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box; /* 패딩 포함 너비 100% */
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-group label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-apply-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--primary-color); /* CreatePost.js와 통일 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-apply-btn:hover {
+  background-color: var(--primary-dark-color); /* CreatePost.js와 통일 */
+}
+
+.filter-apply-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 2. 게시물 목록 */
+.gigs-list {
+  flex-grow: 1;
+  display: grid;
+  /* 자동으로 반응형 그리드 생성 */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  min-width: 0; /* flexbox 버그 방지 */
+}
+
+.gig-card {
+  background-color: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gig-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.gig-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.gig-type {
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.gig-pay {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.gig-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
+  color: #333;
+}
+
+.gig-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1; /* 카드가 같은 높이를 갖도록 함 */
+  margin-bottom: 1rem;
+}
+
+.gig-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  margin-top: auto; /* 푸터를 카드 하단에 고정 */
+}
+
+.gig-card-stats {
+  font-size: 0.85rem;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+}
+
+.error-message {
+  color: #d9534f;
+  font-weight: 600;
+}

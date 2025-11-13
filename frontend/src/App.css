@@ -1,0 +1,57 @@
+/* frontend/src/App.css */
+
+/* App 컴포넌트 전체를 중앙에 배치하거나 기본 스타일을 정의 */
+.App {
+  /* 'max-width'를 줘서 앱의 최대 너비를 제한합니다. 
+    (예: 420px. 아이폰 14 Pro Max 가로 크기 정도)
+    'width: 100%'는 모바일에서 꽉 차게 보이기 위함입니다.
+  */
+  width: 100%;
+  max-width: 420px; 
+  
+  /* 'margin: 0 auto'를 주면 
+    데스크톱 화면에서 이 '앱' 컨테이너가 중앙에 오게 됩니다. 
+  */
+  margin: 0 auto;
+  
+  text-align: center; 
+  padding-top: 20px;
+
+  /* (선택) 앱처럼 보이게 테두리 추가 */
+  border: 1px solid #ddd;
+  min-height: 100vh; /* 최소 높이를 화면 전체로 */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 로고 이미지 스타일 */
+.App-logo {
+  /* 두 가지 방법으로 크기를 조절할 수 있습니다. */
+
+  /* 방법 1: 고정 너비 (px, rem 등) - 추천 */
+  width: 300px; /* 원하는 너비로 조절 */
+  height: auto; /* 너비에 맞춰 높이 자동 조절 */
+
+  margin-bottom: -120px; /* 로고 아래 여백 */
+}
+
+/* 헤더 스타일 (선택 사항) */
+.App-header {
+  margin-bottom: 20px; /* 헤더 전체 아래 여백 */
+  padding: 20px;
+  /* background-color: #f0f0f0; */
+  /* border-bottom: 1px solid #eee; */
+}
+
+@media (min-width: 768px) {
+  .App {
+    max-width: 960px; /* 데스크톱에서는 최대 960px로 */
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+main {
+  /* 하단 내비게이션 바(높이 65px)에 가려지지 않도록
+     페이지 하단에 80px 정도의 여유 공간을 줍니다. */
+  padding-bottom: 80px; 
+}

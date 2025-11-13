@@ -1,0 +1,162 @@
+/* MyPage.css */
+
+.mypage-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif; /* (전역 폰트가 설정되어 있다면 필요 X) */
+}
+
+.mypage-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.mypage-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #eee;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #444;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+/* --- 1. 프로필 관리 --- */
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.profile-item:not(:last-child) {
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.profile-item label {
+  font-weight: 500;
+  color: #555;
+  flex: 0 0 100px; /* 라벨 너비 고정 */
+}
+
+.profile-view-group,
+.profile-edit-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.profile-view-group span {
+  font-size: 1rem;
+  color: #333;
+  flex-grow: 1;
+}
+
+.profile-edit-group input[type="text"] {
+  flex-grow: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.profile-item-action {
+    margin-top: 1rem;
+}
+
+/* 공통 버튼 스타일 */
+.btn-edit, .btn-save, .btn-cancel, .btn-action, .btn-logout, .btn-delete-account {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.btn-edit:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-save {
+  background-color: var(--primary-color, #007bff); /* (CreatePost.css의 변수 사용) */
+  color: white;
+}
+.btn-save:hover {
+  background-color: var(--primary-dark-color, #0056b3);
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+/* --- 2. 나의 활동 --- */
+.action-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-action {
+  flex: 1; /* 버튼이 1:1 비율로 */
+  padding: 0.8rem 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+.btn-action:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+
+/* --- 3. 계정 관리 --- */
+.account-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-logout {
+  background-color: #ffc107;
+  color: #333;
+}
+.btn-logout:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete-account {
+  background-color: transparent;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+.btn-delete-account:hover {
+  background-color: #dc3545;
+  color: white;
+}

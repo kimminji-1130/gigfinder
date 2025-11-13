@@ -1,0 +1,46 @@
+/* 하단 내비게이션 바 전체 */
+.bottom-nav {
+  position: fixed; /* 화면에 고정 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  display: flex;
+  justify-content: space-around; /* 아이콘들을 균등하게 배치 */
+  align-items: center;
+  
+  height: 65px; /* 내비게이션 바 높이 */
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+
+  /* App.css에서 설정한 max-width와 맞추고 중앙 정렬 */
+  max-width: 620px; /*원래 420인데 크기조정조금 함*/
+  margin: 0 auto;
+}
+
+/* 개별 링크(아이콘 + 텍스트) */
+.nav-link {
+  display: flex;
+  flex-direction: column; /* 아이콘과 텍스트를 세로로 정렬 */
+  align-items: center;
+  justify-content: center;
+  
+  flex-grow: 1; /* 모든 링크가 동일한 너비를 갖도록 함 */
+  
+  color: #b7b7b7; /* 비활성 아이콘/텍스트 색상 */
+  text-decoration: none;
+  font-size: 1rem; /* 텍스트 크기 */
+}
+
+/* 아이콘 크기 */
+.nav-link svg {
+  font-size: 2rem; /* 아이콘 크기 */
+  margin-bottom: 6px;
+}
+
+/* 활성화된 링크 스타일 */
+.nav-link.active {
+  color: #436BD1; /* 활성 아이콘/텍스트 색상 (Register.css와 동일) */
+  font-weight: 600;
+}
